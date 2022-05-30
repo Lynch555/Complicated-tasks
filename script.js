@@ -1,13 +1,38 @@
-let num = 266219,
-    rezult,
-    rezult2;
+let lang = 'ru';
+let arr;
 
-rezult = 2 * 6 * 6 * 2 * 1 * 9;
-console.log(rezult);
+if (lang == 'ru') {
+    arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+} else if (lang == 'en') {
+    arr = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
+}
 
-rezult2 = rezult ** 3;
-console.log(rezult2);
+console.log(arr);
 
-let digit1 = rezult2.toString()[0];
-let digit2 = rezult2.toString()[1];
-console.log(digit1, digit2);
+
+switch (lang) {
+    case 'ru':
+        let arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+        break;
+    case 'en':
+        arr = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
+        break;
+}
+console.log(arr);
+
+
+let obj = {
+    'ru': ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
+    'en': ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'],
+};
+
+let arr1 = obj[lang];
+
+console.log(arr1);
+
+
+let namePerson = prompt('Введите имя:');
+
+console.log(namePerson === 'Артем' ? 'директор' : (namePerson === 'Александр' ? 'преподаватель' : 'студент'));
+
+
