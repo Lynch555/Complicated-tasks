@@ -1,9 +1,9 @@
 let lang = 'ru';
 let arr;
 
-if (lang == 'ru') {
+if (lang === 'ru') {
     arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-} else if (lang == 'en') {
+} else if (lang === 'en') {
     arr = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
 }
 
@@ -12,7 +12,7 @@ console.log(arr);
 
 switch (lang) {
     case 'ru':
-        let arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+        arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
         break;
     case 'en':
         arr = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
