@@ -1,38 +1,21 @@
-let lang = 'ru';
-let arr;
+'use strict';
 
-if (lang == 'ru') {
-    arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-} else if (lang == 'en') {
-    arr = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
-}
-
-console.log(arr);
-
-
-switch (lang) {
-    case 'ru':
-        let arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-        break;
-    case 'en':
-        arr = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
-        break;
-}
-console.log(arr);
-
-
-let obj = {
-    'ru': ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
-    'en': ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'],
+const showMessage = (arg) => {
+    let a = 'Впишите строку.';
+    if (typeof arg === "string") {
+        const str = arg.trim();
+        const maxLength = 30;
+        if (str.length > maxLength) {
+            a = str.substring(0, maxLength) + '...';
+        } else {
+            a = str;
+        }
+    }
+    return a;
 };
 
-let arr1 = obj[lang];
-
-console.log(arr1);
-
-
-let namePerson = prompt('Введите имя:');
-
-console.log(namePerson === 'Артем' ? 'директор' : (namePerson === 'Александр' ? 'преподаватель' : 'студент'));
+console.log('showMessage(): ', showMessage(5));
+console.log('showMessage(): ', showMessage('Строка менее 30 символов'));
+console.log('showMessage(): ', showMessage('Строка более 30 символов'));
 
 
