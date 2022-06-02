@@ -1,21 +1,38 @@
-'use strict';
+"use strict";
 
-const showMessage = (arg) => {
-    let a = 'Впишите строку.';
-    if (typeof arg === "string") {
-        const str = arg.trim();
-        const maxLength = 30;
-        if (str.length > maxLength) {
-            a = str.substring(0, maxLength) + '...';
-        } else {
-            a = str;
+// Задача 1
+let arr = [
+    23,
+    43,
+    47,
+    55,
+    65,
+    74,
+    94,
+];
+
+const sorter = function (arr) {
+    arr.forEach(element => {
+        if (element.toString()[0] == 2 || element.toString()[0] == 4) {
+            console.log(element);
         }
-    }
-    return a;
+    });
 };
 
-console.log('showMessage(): ', showMessage(5));
-console.log('showMessage(): ', showMessage('Строка менее 30 символов'));
-console.log('showMessage(): ', showMessage('Строка более 30 символов'));
+sorter(arr);
+
+// Задача 2
+
+let n = 100;
+
+nextStep:
+for (let i = 2; i <= n; i++) {
+
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) continue nextStep;
+    }
+
+    console.log(i);
+}
 
 
