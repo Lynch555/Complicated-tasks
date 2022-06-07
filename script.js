@@ -1,38 +1,32 @@
-"use strict";
+'use strict';
 
-// Задача 1
-let arr = [
-    23,
-    43,
-    47,
-    55,
-    65,
-    74,
-    94,
-];
+/*
+    Задания по уроку №7
+*/
 
-const sorter = function (arr) {
-    arr.forEach(element => {
-        if (element.toString()[0] == 2 || element.toString()[0] == 4) {
-            console.log(element);
-        }
-    });
-};
+/*
+1) Создать массив week и записать в него дни недели в виде строк
+·        Вывести на экран все дни недели
+·        Каждый из них с новой строчки
+·        Выходные дни - курсивом
+·        Текущий день - жирным шрифтом(использовать объект даты)
+*/
 
-sorter(arr);
+const week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
 
-// Задача 2
+const day = new Date();
+let numWeekDay = day.getDay();
+if ( numWeekDay === 0) { numWeekDay = 6; } else { numWeekDay--; }
 
-let n = 100;
-
-nextStep:
-for (let i = 2; i <= n; i++) {
-
-    for (let j = 2; j < i; j++) {
-        if (i % j == 0) continue nextStep;
+week.forEach((day, i) => {
+    let str = day;
+    if (i === numWeekDay) {
+        str = `<b>${day}</b>`;
+    } else {
+        str = `${day}`;
     }
-
-    console.log(i);
-}
+    if (i === 5 || i === 6) { str = `<i>${str}</i>`; }
+    document.body.insertAdjacentHTML('beforeend', `<div>${str}</div>`);
+});
 
 
